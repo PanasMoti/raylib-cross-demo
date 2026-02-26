@@ -27,15 +27,23 @@ void quit() {
     free_config(&cfg);
 }
 
+void update() {
+}
+
+void draw() {
+    ClearBackground(RAYWHITE);
+    DrawText("Hello World", 190, 200, 20, LIGHTGRAY);
+}
 
 int main(void) {
     preload();
     load();
     init();
     while(!WindowShouldClose()) {
+        update();
+        //------------------
         BeginDrawing();
-            ClearBackground(RAYWHITE);
-            DrawText("Hello World", 190, 200, 20, LIGHTGRAY);
+        draw();
         EndDrawing();
     }
     quit();
