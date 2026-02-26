@@ -23,5 +23,6 @@ int main(void) {
         EndDrawing();
     }
     CloseWindow();
+    free_config(&cfg);
     return 0;
 }
