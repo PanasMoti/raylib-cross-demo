@@ -31,9 +31,17 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} src/main.c src/load_cfg.c)
+add_executable(${PROJECT_NAME} 
+    src/main.c src/load_cfg.c src/str2int.c
+)
 #set(raylib_VERBOSE 1)
+
+target_include_directories(${PROJECT_NAME} PUBLIC
+    "${CMAKE_CURRENT_LIST_DIR}/include"
+)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib inih )
+
 
 # Web Configurations
 if (${PLATFORM} STREQUAL "Web")
