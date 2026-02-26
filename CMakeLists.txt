@@ -32,7 +32,7 @@ endif()
 # Our Project
 
 add_executable(${PROJECT_NAME} 
-    src/main.c src/load_cfg.c src/str2int.c
+    src/main.c src/load_cfg.c src/str2int.c src/hex2color.c
 )
 #set(raylib_VERBOSE 1)
 
