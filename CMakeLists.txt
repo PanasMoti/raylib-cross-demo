@@ -31,7 +31,7 @@ endif()
 
 # Our Project
 
-add_executable(${PROJECT_NAME} src/main.c)
+add_executable(${PROJECT_NAME} src/main.c src/load_cfg.c)
 #set(raylib_VERBOSE 1)
 target_link_libraries(${PROJECT_NAME} PRIVATE raylib inih )
 
