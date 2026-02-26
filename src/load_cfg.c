@@ -17,6 +17,5 @@ int handler(void* data, const char* section, const char* name, const char* value
 int free_config(config *cfg) {
     // free strings
     free((void*)cfg->window.title);
-    free((void*)cfg->window.bgcolor);
     return 1;
 }

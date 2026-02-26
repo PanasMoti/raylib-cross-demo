@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "str2int.h"
+#include <raylib.h>
+#include "hex2color.h"
 
 typedef struct {
     // [window]
@@ -12,7 +14,7 @@ typedef struct {
         int32_t width;
         int32_t height;
         const char* title;
-        const char* bgcolor;
+        Color bgcolor;
     } window;
 } config;
 
@@ -30,6 +32,7 @@ typedef struct {
             uint64_t: strtoi64, \
             char*: strdup, \
             const char*: strdup, \
+            Color: ColorFromHex, \
             default: strdup \
             )( (v) )
 
