@@ -2,3 +2,4 @@ build
 winbuild
 cmake-debug-build
 compile_commands.json
+.cache
