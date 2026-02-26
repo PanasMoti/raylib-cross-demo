@@ -9,6 +9,7 @@ int handler(void* data, const char* section, const char* name, const char* value
     MATCH(window, width)
     MATCH(window, height)
     MATCH(window, title)
+    MATCH(window, bgcolor)
     END_MATCH;
     return 1;
 }
@@ -16,5 +17,6 @@ int handler(void* data, const char* section, const char* name, const char* value
 int free_config(config *cfg) {
     // free strings
     free((void*)cfg->window.title);
+    free((void*)cfg->window.bgcolor);
     return 1;
 }

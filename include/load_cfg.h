@@ -12,6 +12,7 @@ typedef struct {
         int32_t width;
         int32_t height;
         const char* title;
+        const char* bgcolor;
     } window;
 } config;
 
