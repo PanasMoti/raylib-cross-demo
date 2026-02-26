@@ -1,10 +1,19 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <raylib.h>
+#include <ini.h>
+#include "load_cfg.h"
 
 int main(void) {
-    const int width = 800;
-    const int height = 600;
-    const char* const title = "raylib cross platform demo";
+    const char* config_path = "assets/cfg.ini";
+    config cfg = { 0 };
+    if(ini_parse(config_path, handler, &cfg) < 0) {
+        fprintf(stderr, "FUCK\n");
+    }
+    printf("(%d %d %s)\n", cfg.window.width, cfg.window.height, cfg.window.title);
+    const int width = cfg.window.width;
+    const int height = cfg.window.height;
+    const char* const title = cfg.window.title;
     InitWindow(width, height, title);
     SetTargetFPS(60);
     while(!WindowShouldClose()) {
